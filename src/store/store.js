@@ -2,6 +2,7 @@ import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {listReducer} from '../reducers/list.reducer'
 import {uiReducer} from '../reducers/ui.reducer';
 import {logger} from '../middleware/logger';
+import {api} from '../middleware/api';
 
 const initialState = {
   items: [],
@@ -13,8 +14,10 @@ const rootReducer = combineReducers({
   loading: uiReducer,
 })
 
+const middleware = [logger, api];
+
 export const store = createStore(
   rootReducer, 
   initialState,
-  applyMiddleware(logger)
+  applyMiddleware(...middleware)
 );

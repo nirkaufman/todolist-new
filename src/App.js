@@ -1,6 +1,7 @@
 import {useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import './App.css';
+import {loadItems} from './actions/list.actions'
 import Header from './Header'
 import Main from './Main';
 
@@ -8,7 +9,7 @@ function App() {
   const dispatch = useDispatch();
   
   useEffect(() => {
-    dispatch(loadItems())
+    dispatch(loadItems);
   }, [])
 
   return (

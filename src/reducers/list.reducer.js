@@ -1,6 +1,9 @@
 export function listReducer(items = [], action) {
  switch (action.type) {
 
+  case 'SET_ITEMS':
+    return action.payload;  
+
   case 'ADD_ITEM':
     return [...items, action.payload];
 

@@ -1,4 +1,7 @@
-1. Create action for setting intial items.
-2. Add case to list reducer to set thease items
-3. While loading items from API, set the "isLoading" flag to true.
-4. Main component should display "loading" while "isLoading" is true
+1. App compornnrt should dispatch 'loadItems' action
+2. create api middleware:
+  - check if the action type is loadItems
+  - dispatch the action toggleLoading 
+  - use fetch to get otems from API
+  - dispatch the action setItems 
+  - dispatch the action toggleLoading 

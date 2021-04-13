@@ -1,21 +1,19 @@
-import { useState, useEffect } from 'react';
+import {useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import './App.css';
 import Header from './Header'
 import Main from './Main';
 
 function App() {  
-
+  const dispatch = useDispatch();
+  
   useEffect(() => {
-   fetch('https://jsonplaceholder.typicode.com/todos')
-    .then( results => results.json() )
-    .then( items =>  )
+    dispatch(loadItems())
   }, [])
 
   return (
     <section class="todoapp">
-
       <Header/>
-      
       <Main />
 
       <footer class="footer">
